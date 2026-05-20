@@ -1,0 +1,40 @@
+~ $ echo "=== HITO 1: KERNEL VULNERABLE CONFIRMADO ==="
+
+=== HITO 1: KERNEL VULNERABLE CONFIRMADO ===
+
+~ $ echo "Fecha: $(date)"
+
+Fecha: Wed May 20 04:43:52 UTC 2026
+
+~ $ echo "Hostname: $(hostname)"
+
+Hostname: copy-fail-Francis-David-Acuna
+
+~ $ echo "Kernel: $(uname -r)"
+
+Kernel: 6.12.0
+
+~ $ echo "Identidad: $(id)"
+
+Identidad: uid=1001(student) gid=1001(student) groups=1001(student)
+
+~ $ echo "Módulos AF_ALG:"
+
+Módulos AF_ALG:
+
+~ $ lsmod | grep -i alg || echo "(no encontrado con lsmod, verificar /proc/modul
+
+es)"
+
+-sh: lsmod: not found
+
+(no encontrado con lsmod, verificar /proc/modules)
+
+~ $ echo "algif_aead en /proc/modules:"
+
+algif_aead en /proc/modules:
+
+~ $ grep algif_aead /proc/modules 2>/dev/null || echo "(no encontrado)"
+
+(no encontrado) 
+
