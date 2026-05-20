@@ -65,6 +65,9 @@ make CONFIG_PREFIX="$INITRAMFS_DIR" install 2>&1 | tail -3
 # Estructura mínima
 mkdir -p "$INITRAMFS_DIR"/{proc,sys,dev,tmp,etc,root,home/student,run}
 
+chmod 1777 "$INITRAMFS_DIR/tmp"
+chown -R 1001:1001 "$INITRAMFS_DIR/home/student"
+
 # Usuario student (sin privilegios) y root
 cat > "$INITRAMFS_DIR/etc/passwd" << 'PASSWD'
 root:x:0:0:root:/root:/bin/sh
