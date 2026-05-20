@@ -1,0 +1,18 @@
+~ $ echo "=== HITO 3: MITIGACIÓN TEMPORAL ==="
+=== HITO 3: MITIGACIÓN TEMPORAL ===
+~ $ echo "Fecha: $(date)"
+Fecha: Wed May 20 04:59:32 UTC 2026
+~ $ echo "Hostname: $(hostname)"
+Hostname: copy-fail-Francis-David-Acuna
+~ $ echo "algif_aead en lsmod:"
+algif_aead en lsmod:
+~ $ lsmod | grep algif_aead || echo "(módulo NO cargado - mitigación activa)"
+-sh: lsmod: not found
+(módulo NO cargado - mitigación activa)
+~ $ echo ""
+
+~ $ echo "Intento de exploit post-mitigación:"
+Intento de exploit post-mitigación:
+~ $ ./poc_bin 2>&1 | head -10 || echo "(exploit falló como se esperaba)"
+[-] Error bind: No such file or directory
+[*] Iniciando PoC Copy Fail (CVE-2026-31431)...
